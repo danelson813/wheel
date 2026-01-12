@@ -9,7 +9,19 @@ dependencies = [
     "httpx>=0.28.1",
     "loguru>=0.7.3",
     "playwright>=1.57.0",
-    "pre-commit>=4.5.1",
-    "ruff>=0.14.10",
+    "playwright-stealth>=2.0.0",
     "selectolax>=0.4.6",
 ]
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.14.10",
+    "pre-commit>=4.5.1",
+]
+
+[tool.scraper]
+CONCURRENCY = 3
+TIMEOUT = 30000
+RETRIES = 3
+BASE_URL = "https://books.toscrape.com/catalogue/page-{}.html"
+MAX_PAGES = 50
